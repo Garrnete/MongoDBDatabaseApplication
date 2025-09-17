@@ -1,5 +1,5 @@
 {
-  "name": "sba",
+  "name": "lecture",
   "version": "1.0.0",
   "description": "",
   "main": "server.mjs",
@@ -14,7 +14,8 @@
   "type": "commonjs",
   "dependencies": {
     "dotenv": "^17.2.2",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mongoose": "^8.18.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

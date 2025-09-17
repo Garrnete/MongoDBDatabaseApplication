@@ -3,7 +3,6 @@ import express from 'express';
 import dotenv from 'dotenv';
 import globalErr from "./middleware/globalErr.mjs";
 import log from "./middleware/loggingMiddleware.mjs";
-import connectDB from "./db/conn.mjs";
 
 
 // Setups
@@ -13,7 +12,6 @@ const PORT = process.env.PORT || 3001;
 
 
 // DB Connection
-connectDB();
 
 
 // Middleware
@@ -22,8 +20,6 @@ app.use(log);
 
 
 // Routes
-app.use("/api/mammal", mammalRoutes);
-app.use("/api/avian", avianRoutes);
 
 
 // Err Handling Middleware
