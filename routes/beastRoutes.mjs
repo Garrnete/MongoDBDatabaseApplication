@@ -3,6 +3,17 @@ import Beast from "../models/beast.mjs";
 
 const router = express.Router();
 
+router.post("/test-invalid", async (req, res) => {
+    try {
+        // test invalid: dangerLevel is missing (required)
+        const invalid = await Beast.create({ name: "InvalidBeast", habitat: "Nowhere" });
+        res.json(invalid);
+    } catch (err) {
+        // Send back validation error message (shows DB-side validation works)
+        res.status(400).json({ msg: "Validation failed", error: err.message });
+    }
+});
+
 // Get beasts by habitat
 router.get("/habitat/:hab", async (req, res) => {
     try {
